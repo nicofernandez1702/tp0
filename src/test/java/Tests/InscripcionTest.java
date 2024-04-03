@@ -35,6 +35,14 @@ public class InscripcionTest {
   @Test
   public void noSePuedeInscribir(){
 
+    alumnoB.aprobar(materiaA);
+    inscripcionB.agregarMAteria(materiaC);
+    inscripcionB.setAspirante(alumnoB);
+    materiaC.agregarCorrelativa(materiaB);
+    materiaC.agregarCorrelativa(materiaA);
+
+    Assert.assertEquals(inscripcionB.aprobada(),false);
+
   }
 
 
